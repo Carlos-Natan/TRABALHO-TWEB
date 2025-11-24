@@ -12,16 +12,59 @@
 @font-face{
     font-family: 'GameOfThrones';
     src: url(../fonts/game_of_thrones.woff) format('woff');
-    font-weight: normal;
     font-style: normal;
 }
 
 /*COMPUTADOR:=====================================================================================================================================================*/
 
     /*HEADER:*/
+header{
+    background: black;
+    color: white;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    opacity: 0.93;
+}
+
+header .header-content {
+    height: inherit;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .header-content .menu {
+    display: none;
+}
+
+header .header-content .mobile-menu {
+    background: none;
+    border: 0;
+    color: white;
+}
+
+        /*FIGURE:*/
+header figure img{
+    width: 60%;
+}
+
+
+
+
+        /*NAV:*/
+nav ul{
+    list-style: none;
+}
+
 
 
     /*MAIN:*/
+main{
+    padding: 80px 20px 0 0;
+}
 
         /*SECTION1:*/
 
@@ -36,27 +79,18 @@
 
 
     /*FOOTER:*/
+footer{
+
+}
 
 /*RESPONSIVIDADE:=================================================================================================================================================*/
 
-@media (max-width: 600px) {
-
-    h1{
-        color:blue;
-        font-family: 'GameOfThrones';
-    }
-
-    header{
-        height: 56px;
-        padding: 0 22px;
-    }
-
-    .logo{
-        height: 36px;
-    }
+/*@media (max-width: 600px) {
 
     nav ul{
         gap: 14px;
+        font-size: 12px;
+        font-family: 'GameOfThrones';
     }
 }
 
@@ -66,6 +100,12 @@
         color: red;
         font-family: 'GameOfThrones';
     }
+
+    nav ul{
+        gap: 14px;
+        font-size: 14px;
+        font-family: 'GameOfThrones';
+    }
 }
 
 @media (min-width: 900px) and (max-width: 1200px) {
@@ -73,5 +113,33 @@
     h1{
         color: green;
         font-family: 'GameOfThrones';
+    }
+
+    nav ul{
+        gap: 14px;
+        font-size: 12px;
+        font-family: 'GameOfThrones';
+    }
+}*/
+
+@media(min-width: 1024px) {
+    header .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    header .header-content .menu {
+        display: flex;
+    }
+
+    header .header-content .menu ul {
+        display: flex;
+        gap: 20px;
+        font-family: 'GameOfThrones';
+    }
+
+
+    header .header-content .mobile-menu {
+       display: none;
     }
 }
