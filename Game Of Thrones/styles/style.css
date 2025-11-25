@@ -1,6 +1,12 @@
 /*COMFIGURAÇÕES===================================================================================================================================================*/
 :root{
-
+    --preto1: #000;
+    --preto2: #111;
+    --cor-texto: #eee;
+    --font-arial: Arial;
+    --font-GOT: 'GameOfThrones';
+    --tamanho-header: 70px;
+    --altura-espaçamento-linha: 1.3;
 }
 
 *{
@@ -15,13 +21,24 @@
     font-style: normal;
 }
 
+body{
+    background: var(--preto1);
+    font-family: var(--font-arial);
+    color: var(--cor-texto);
+    line-height: var(--altura-espaçamento-linha);
+}
+
 /*COMPUTADOR:=====================================================================================================================================================*/
 
     /*HEADER:*/
+.heade{
+    
+
+}
+
 header{
-    background: black;
-    color: white;
-    height: 70px;
+    background: var(--preto2);
+    height: var(--tamanho-header);
     position: fixed;
     width: 100%;
     opacity: 0.93;
