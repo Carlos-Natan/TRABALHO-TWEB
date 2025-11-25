@@ -3,6 +3,7 @@
     --preto1: #000;
     --preto2: #111;
     --cor-texto: #eee;
+    --cinza: #505050;
     --font-arial: Arial;
     --font-GOT: 'GameOfThrones';
     --tamanho-header: 70px;
@@ -26,16 +27,13 @@ body{
     font-family: var(--font-arial);
     color: var(--cor-texto);
     line-height: var(--altura-espaçamento-linha);
+
+
 }
 
 /*COMPUTADOR:=====================================================================================================================================================*/
 
     /*HEADER:*/
-.heade{
-    
-
-}
-
 header{
     background: var(--preto2);
     height: var(--tamanho-header);
@@ -47,7 +45,6 @@ header{
 header .header-content {
     height: inherit;
     padding: 10px 20px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,20 +57,26 @@ header .header-content .menu {
 header .header-content .mobile-menu {
     background: none;
     border: 0;
-    color: white;
 }
 
         /*FIGURE:*/
-header figure img{
-    width: 60%;
+header .logo{
+    width: 50%;
 }
-
-
-
 
         /*NAV:*/
 nav ul{
     list-style: none;
+}
+
+.linha-header a{
+    text-decoration: none;
+    color:var(--cor-texto);
+}
+
+a:hover{
+    color:var(--cinza);
+
 }
 
 
@@ -81,23 +84,27 @@ nav ul{
     /*MAIN:*/
 main{
     padding: 80px 20px 0 0;
+    background: url(../asset/) no-repeat center;
+    background-size: cover;
 }
 
         /*SECTION1:*/
-
+.secão1{}
 
         /*SECTION2:*/
-
+.secão2{}
 
         /*SECTION3:*/
-
+.secão2{}
 
         /*SECTION4:*/
-
+.secão4{}
 
     /*FOOTER:*/
 footer{
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*RESPONSIVIDADE:=================================================================================================================================================*/
