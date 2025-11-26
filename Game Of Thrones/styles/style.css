@@ -18,10 +18,10 @@
 
 @font-face{
     font-family: 'GameOfThrones';
-    src: url(../fonts/game_of_thrones.woff) format('woff');
+    src: url(../game_of_thrones.woff) format('woff');
     font-style: normal;
 }
-
+ 
 body{
     background: var(--preto1);
     font-family: var(--font-arial);
@@ -33,7 +33,7 @@ body{
 
 /*COMPUTADOR:=====================================================================================================================================================*/
 
-    /*HEADER:*/
+    /*HEADER:*/ 
 header{
     background: var(--preto2);
     height: var(--tamanho-header);
@@ -55,13 +55,30 @@ header .header-content .menu {
 }
 
 header .header-content .mobile-menu {
+    color: var(--cor-texto);
     background: none;
     border: 0;
 }
 
-        /*FIGURE:*/
+        /*logo:*/
 header .logo{
-    width: 50%;
+    width: 40%;
+    transition: opacity.3s ease; /* A propriedade transition: opacity .3s ease; serve para criar uma animação suave quando a opacidade de um elemento muda:*/
+}
+
+      /*botão menu*/
+.menu-button img{
+width: 50px;
+height: 40px;        /*deixa a img redonda:*/
+border-radius: 50%;
+object-fit: cover;
+
+filter: invert(100%);  /*inverte a cor:*/
+cursor: pointer;  /*se clicar na img:*/
+}
+        /*esconde o checkbox*/
+.menu-toggle{ 
+    display: none;  /*essa parte não ta funcionado não sei por que?????*/
 }
 
         /*NAV:*/
@@ -105,6 +122,14 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.GOT{
+    font-family: 'GameOfThrones';
+    text-decoration: none;
+    color:var(--cor-texto);
+    font-size: 12.5px;
+
 }
 
 /*RESPONSIVIDADE:=================================================================================================================================================*/
