@@ -192,3 +192,120 @@ footer{
        display: none;
     }
 }
+
+   /* Estilos para os Cards das Casas */
+.house-gallery {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.house-card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex-basis: calc(33.333% - 30px);
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.house-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+     /* tamanho do p dentro dos cards*/
+.house-card p {
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+}
+ /* tamanho dos outros p*/
+
+p {
+  font-size: 1.5em;
+}
+
+
+        /*  Responsividade dos cards  */
+@media (max-width: 600px) {
+    nav ul {
+        gap: 14px;
+        font-size: 12px;
+        font-family: 'GameOfThrones';
+    }
+
+    .house-card {
+        flex-basis: 100%; /* 1 card por linha em telas muito pequenas */
+    }
+}
+
+       
+@media (min-width: 600px) and (max-width: 900px) {
+    nav ul {
+        gap: 14px;
+        font-size: 14px;
+        font-family: 'GameOfThrones';
+    }
+
+    .house-card {
+        flex-basis: calc(50% - 30px); /* 2 cards por linha */
+    }
+}
+
+    
+@media (min-width: 900px) and (max-width: 1200px) {
+    nav ul {
+        gap: 14px;
+        font-size: 12px;
+        font-family: 'GameOfThrones';
+    }
+
+    .house-card {
+        flex-basis: calc(33.333% - 30px); /* 3 cards por linha */
+    }
+}
+
+@media (min-width: 1024px) {
+    header .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    header .header-content .menu {
+        display: flex;
+    }
+
+    header .header-content .menu ul {
+        display: flex;
+        gap: 20px;
+        font-family: 'GameOfThrones';
+    }
+
+    header .header-content .mobile-menu {
+        display: none;
+    }
+}
+
+
+@media (max-width: 78px) {
+    .house-card {
+        flex-basis: calc(50% - 30px); /* 2 cards por linha em telas pequenas */
+    }
+}
+
+
