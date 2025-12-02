@@ -1,1 +1,0 @@
-# Guia---Game-Of-Thrones
