@@ -191,7 +191,7 @@ main {
 
 /*SECTION1:*/
 
- /* O Contêiner de Texto: .texto */
+ /* O Contêiner de Texto: principal */
 .texto {
     position:absolute;
     top: 60%;   
@@ -202,7 +202,7 @@ main {
     width: 40%; 
 }
 
-/* Estilos para o Título e Parágrafo */
+/* Estilos para o Título e Parágrafo: */
 .texto h2 {
     font-size: 3.5em;
     margin-bottom: 15px;
@@ -215,6 +215,40 @@ main {
 
 
 /*SECTION2:*/
+.container-sinopse {
+    width: 90%; /* ocupa quase a tela inteira */
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    letter-spacing: 0.3px;
+}
+
+.container-sinopse h2 {
+    color: #d1d1d1;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    font-family: "Cinzel", serif; /* estilo medieval */
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    border-bottom: 1px solid #a1a1a1;
+    padding-bottom: 8px;
+}
+
+.container-sinopse p {
+    margin-bottom: 25px;
+}
+
+.container-sinopse strong {
+    color: #e0cba0;
+}
+
+/*SECTION3:*/
 /* Estilos para os Cards das Casas */
 .house-gallery {
     max-width: 1200px;
@@ -236,31 +270,48 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s, box-shadow 0.5s;
+    transform: rotateX(0deg) scale(1);
 }
 
 .house-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotateX(5deg) scale(1.05); /* No hover, aplica rotação e aumenta o tamanho */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 .house-card img {
     width: 120px;
     height: 120px;
-    object-fit: contain;
-    margin-bottom: 15px;
+    object-fit: cover; /* Ajuste para a imagem preencher corretamente */
+    margin-bottom: 16px;
+    z-index: 1;
 }
 
-/* tamanho do p dentro dos cards*/
 .house-card p {
     font-size: 1.1rem;
-    color: rgb(255, 255, 255);
+    color: rgb(245, 237, 237);
+    position: relative; /* Mudei para 'relative' para o texto se mover corretamente */
+    opacity: 0;
+    transform: translateZ(50px) translateY(20px); /* Ajustei para um início discreto */
+    transition: opacity 0.5s, transform 0.5s;
+    
 }
+
+.house-card:hover p {
+    opacity: 1;
+    transform: translateZ(70px) translateY(-5px); /* No hover, o texto aparece com animação */
+}
+
+
+.house-card h3{
+    margin-top: -3%; /* Suba ou desça ajustando o valor */
+}
+
 
 /* tamanho dos outros p*/
 
 p {
-    font-size: 1.5em;
+    font-size: 1.0em;
 }
 
 
@@ -327,12 +378,38 @@ p {
     }
 }
 
-
-/*SECTION3:*/
-.secão2 {}
-
 /*SECTION4:*/
-.secão4 {}
+/* Estilos para a seção do mapa */
+#mundo {
+    padding: 20px;
+}
+
+.mapa-container {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espaço entre o texto e o mapa */
+    align-items: center; /* Alinha o texto e o mapa no centro verticalmente */
+    gap: 20px; /* Espaço entre o texto e o mapa */
+}
+
+.texto-mapa {
+    flex: 1; /* O texto ocupa o espaço restante */
+    max-width: 50%; /* Limita o tamanho do texto */
+    padding-right: 20px; /* Espaço entre o texto e o mapa */
+}
+
+.mapa-imagem {
+    flex: 1; /* O mapa ocupa o espaço restante */
+    max-width: 60%; /* Limita o tamanho da imagem */
+}
+
+.mapa-imagem img {
+    width: 100%; /* Garante que a imagem se ajuste ao tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.mapa-container {
+    flex-direction: row-reverse; /* Inverte a ordem, coloca o mapa à direita */
+}
+
 
 /*FOOTER:*/
 footer {
@@ -401,4 +478,3 @@ footer {
         display: none;
     }
 }
-
