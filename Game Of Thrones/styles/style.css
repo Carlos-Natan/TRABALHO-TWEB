@@ -1,4 +1,4 @@
-/*COMFIGURAÇÕES===================================================================================================================================================*/
+se/*COMFIGURAÇÕES===================================================================================================================================================*/
 :root {
     /*COMUM:*/
     --preto: #000;
@@ -409,4 +409,87 @@ footer {
     header .header-content .mobile-menu {
         display: none;
     }
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1024px) {
+    /*HEADER:*/
+    header .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    header .header-content .menu {
+        display: flex;
+    }
+
+    header .header-content .menu ul {
+        display: flex;
+        gap: 20px;
+        font-family: 'GameOfThrones';
+    }
+
+
+    header .header-content .mobile-menu {
+        display: none;
+    }
+
+    /*MAIN:*/
+    .menu { display: none; }
+    .mobile-menu { display: block; }
+
+    .texto { width: 60%; top: 55%; }
+    .texto h2 { font-size: 2.8em; }
+
+
+}
+
+
+@media (max-width: 900px) {
+    .house-card { flex-basis: calc(50%- 25px); }
+
+    .container-sinopse {
+        padding: 40px;
+        font-size: 1.05rem;
+    }
+
+    .container-sinopse h2 { font-size: 1.6rem; }
+
+    .texto { width: 70%; }
+}
+
+
+@media (max-width: 768px) {
+    .house-card { flex-basis: 80%; }
+
+    .container-sinopse {
+        padding: 100px;
+        font-size: 1rem;
+    }
+
+    .texto h2 { font-size: 2.5em; }
+    .texto p { font-size: 1em; }
+
+
+    .mapa-container { flex-direction: column; }
+    .texto-mapa, .mapa-imagem { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .container-sinopse {
+        padding: 22px;
+        font-size: 0.95rem;
+    }
+
+    .texto {
+        width: 90%;
+        padding: 10px;
+        top: 50%;
+    }
+
+    .texto h2 { font-size: 2em; }
+    .texto p { font-size: .95em; }
 }
