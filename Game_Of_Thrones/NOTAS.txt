@@ -6,6 +6,7 @@ URLs do game of thrones:
 URL do removedor de fundo:
 https://www.remove.bg/pt-br/upload
 https://www.pngwing.com/pt/free-png-sseow/download
+https://gameofthrones.netmarble.com/pt
 
 
 FONTES:
@@ -50,4 +51,5 @@ REGRAS:
 
 
 correção: ALT + SHIFT + F
+
 pendrive comrrompido: chkdsk d: /f /x
