@@ -48,11 +48,6 @@ body {
 }
 
 
-h3 {
-    font-family: var(--fonte-GOT);
-}
-
-
 /*COMPUTADOR:=====================================================================================================================================================*/
 
 
@@ -127,7 +122,8 @@ header {
         transform: translate(-50%, -50%);
         opacity: 0;
         pointer-events: none;
-        flex-direction: row;  /*lado a lado*/
+        flex-direction: row;
+        /*lado a lado*/
         justify-content: center;
     }
 
@@ -157,28 +153,7 @@ header {
     }
 }
 
-
-
-
-/* ==========================
-   RESET & BASE
-   ========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #000;
-    color: #fff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    overflow-x: hidden;
-}
-
-/* ==========================
-   MAIN (HERÓI)
-   ========================== */
+/* MAIN*/
 main {
     padding: 80px 0 0 0;
     background: url('../asset/') no-repeat center;
@@ -187,6 +162,7 @@ main {
 }
 
 .inicio {
+    display: flex;
     width: 100%;
     position: relative;
 }
@@ -194,67 +170,74 @@ main {
 .inicio img {
     width: 100%;
     height: auto;
-    display: block;
+    box-shadow: 0 0 30px rgba(201, 165, 110, 0.6);
+    margin-bottom: 20px;
 }
 
 .texto {
     position: absolute;
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
-    width: 45%;
+    top: 0;
+    left: 0;
+    padding: 0px;
+    width: 50%;
     color: rgb(230, 230, 230);
-}
-
-.texto h2 {
-    font-size: 3.3rem;
-    margin-bottom: 15px;
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 2px 8px rgba(189, 140, 66, 0.8);
+    margin-bottom: 50px;
 }
 
 .texto p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.20rem;
+    line-height: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* ==========================
-   SINOPSE
-   ========================== */
-.sinopse section {
-    box-shadow: 0 -5px 15px rgba(155, 43, 43, 0.2);
-}
-
+/*SINOPSE*/
 .container-sinopse {
-    width: 90%;
     max-width: 1000px;
     margin: 40px auto;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(201, 165, 110, 0.6);
     color: #ffffff;
-    line-height: 1.8;
+    line-height: 1.6rem;
     font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 20px;
 }
 
 .container-sinopse h2 {
     color: #d1d1d1;
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid #a1a1a1;
+    text-shadow: 0 2px 8px rgba(189, 140, 66, 0.8);
     padding-bottom: 8px;
+
 }
 
-/* ==========================
-   CARDS DAS CASAS
-   ========================== */
+/*CARDS DAS CASAS*/
+
+.casas h2 {
+    text-align: center;
+}
+
+.house-card:hover h3 {
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-6px) scale(1.05);
+    text-shadow: 0 0 10px rgba(131, 185, 176, 0.795);
+}
+
+
+h3 {
+    font-family: var(--fonte-GOT);
+}
+
 .house-gallery {
     max-width: 1000px;
     margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 35px;
     justify-content: center;
 }
 
@@ -269,12 +252,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.4s, box-shadow 0.5s;
+    transition: transform 0.4s, box-shadow 0.5s, text-shadow 0.5s;
 }
 
 .house-card:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 0 15px rgba(201, 165, 110, 0.6);
 }
 
 .house-card img {
@@ -296,9 +279,8 @@ main {
     transform: translateY(0);
 }
 
-/* ==========================
-   MAPA
-   ========================== */
+
+/* MAPA
 #mundo {
     width: 100%;
     height: 400px;
@@ -311,9 +293,7 @@ main {
     object-fit: cover;
 }
 
-/* ==========================
-   FOOTER
-   ========================== */
+/*FOOTER
 footer {
     background: var(--cor-footer);
     color: var(--texto-footer);
@@ -339,17 +319,13 @@ footer {
     filter: brightness(var(--filtro));
 }
 
-/* ==========================
-   RESPONSIVIDADE
-   ========================== */
-@media (max-width: 1024px) {
+/*RESPONSIVIDADE */
+@media (max-width: 2980px) {
     .texto {
-        width: 60%;
-        top: 50%;
-    }
+        width: 50%;
+        top: 10%;
+        margin-left: 25px;
 
-    .texto h2 {
-        font-size: 2.8rem;
     }
 }
 
@@ -364,19 +340,17 @@ footer {
     }
 
     .texto {
-        width: 70%;
+        top: 30%;
+        margin-bottom: 30px;
+        width: 50%;
     }
 }
 
 @media (max-width: 768px) {
     .texto {
-        width: 80%;
+        width: 70%;
         left: 5%;
-        top: 55%;
-    }
-
-    .texto h2 {
-        font-size: 2.2rem;
+        top: 30%;
     }
 
     .house-card {
@@ -391,18 +365,14 @@ footer {
 
 @media (max-width: 480px) {
     .texto {
-        width: 90%;
+        width: 98%;
         left: 5%;
         top: 50%;
         padding: 5px;
     }
 
-    .texto h2 {
-        font-size: 1.8rem;
-    }
-
     .texto p {
-        font-size: .9rem;
+        font-size: 10px;
     }
 
     .container-sinopse {
@@ -411,162 +381,7 @@ footer {
     }
 }
 
-
-/*MAIN:*/
-main {
-    padding: 80px 20px 0 0;
-    background: url(../asset/) no-repeat center;
-    background-size: cover;
-}
-
-/*SECTION1:*/
-.inicio img {
-    transform: translateX(1px);
-    position:relative;
-    margin-left: 0px;
-    margin-right:0px;
-    position: absolute;
-}
-
-.texto {
-    position: absolute;
-    top:60%;
-    transform: translate(0,-50%);
-    text-align: left;
-    color: rgb(212, 202, 202);
-    padding: 20px;
-    width: 40%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin:25px;
-}
-
-.texto h2 {
-    font-size: 3.5em;
-    margin-bottom: 15px;
-}
-
-.texto p {
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-
-/*SECTION2:*/
-
-.sinopse section {
-    box-shadow: 0 -5px 15px rgba(155, 43, 43, 0.2);
-}
-
-.container-sinopse {
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 50px 60px;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    line-height: 1.8;
-    font-size: 1.2rem;
-    letter-spacing: 0.3px;
-}
-
-.container-sinopse h2 {
-    color: #d1d1d1;
-    font-size: 2rem;
-    margin-bottom: 15px;
-    margin-top: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid #a1a1a1;
-    padding-bottom: 8px;
-}
-
-.container-sinopse p {
-    margin-bottom: 25px;
-}
-
-.container-sinopse strong {
-    color: #d3a76d;
-}
-
-/*SECTION3:*/
-/* Estilos para os Cards das Casas */
-.house-gallery {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.house-card {
-    border: 1px solid #444;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    flex-basis: calc(33.333% - 30px);
-    min-width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.4s, box-shadow 0.5s;
-    transform: rotateX(0deg) scale(1);
-}
-
-.house-card:hover {
-    transform: translateY(-5px) rotateX(5deg) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-}
-
-.house-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 16px;
-    z-index: 1;
-}
-
-.house-card p {
-    font-size: 1.1rem;
-    color: rgb(245, 237, 237);
-    position: relative;
-    opacity: 0;
-    transform: translateZ(50px) translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
-    margin: 17px;
-
-}
-
-.house-card:hover p {
-    opacity: 1;
-    transform: translateZ(70px) translateY(-5px);
-}
-
-
-.house-card h3 {
-    margin-top: -3%;
-}
-
-.h2{
-    text-align: center;
-}
-/*SECTION4:*/
-/* Estilos para a seção do mapa */
-#mundo {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.mundo img {
-    width: 100%;
-    height: 100%;
-}
-
-/*FOOTER:*/
+/*FOOTER:
 footer {
     background: var(--cor-footer);
     color: var(--texto-footer);
@@ -644,10 +459,10 @@ footer p {
     font-size: 12.5px;
 
 }
-
-/*RESPONSIVIDADE*/
+*/
 
 @media (max-width: 1024px) {
+
     /*HEADER:*/
     header .header-content {
         max-width: 1400px;
@@ -668,60 +483,4 @@ footer p {
     header .header-content .mobile-menu {
         display: none;
     }
-
-    /*MAIN:*/
-    .menu { display: none; }
-    .mobile-menu { display: block; }
-
-    .texto { width: 60%; top: 55%; }
-    .texto h2 { font-size: 2.8em; }
-
-
-}
-
-
-@media (max-width: 900px) {
-    .house-card { flex-basis: calc(50%- 25px); }
-
-    .container-sinopse {
-        padding: 40px;
-        font-size: 1.5em;
-    }
-
-    .container-sinopse h2 { font-size: 1.6rem; }
-
-    .texto { width: 70%; }
-}
-
-
-@media (max-width: 768px) {
-    .house-card { flex-basis: 80%; }
-
-    .container-sinopse {
-        padding:100px;
-        font-size: 1.0em;
-    }
-
-    .texto h2 { font-size: 2.2em;}
-    .texto p { font-size: 1em; }
-
-
-    .mapa-container { flex-direction: column; }
-    .texto-mapa, .mapa-imagem { max-width: 100%; }
-}
-
-@media (max-width: 480px) {
-    .container-sinopse {
-        padding: 22px;
-        font-size: 0.95rem;
-    }
-
-    .texto {
-        width: 90%;
-        padding: 10px;
-        top: 50%;
-    }
-
-    .texto h2 { font-size: 2em; }
-    .texto p { font-size: .95em; }
 }
