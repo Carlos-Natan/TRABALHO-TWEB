@@ -1,0 +1,566 @@
+/*COMFIGURAÇÕES===================================================================================================================================================*/
+:root {
+    /*COMUM:*/
+    --preto: #000;
+    --cor-texto: #eee;
+    --cinza: #505050;
+    --altura-linha: 1.3;
+    --fonte-principal: Arial;
+    --fonte-GOT: 'GameOfThrones';
+    --transicao-padrao: 0.35s ease;
+
+    /*HEADER:*/
+    --padding-header: 1.2rem;
+    --espaço-links-header: 1.8rem;
+    --fonte-header: 1.05rem;
+    --fonte-header-tablet: 1rem;
+    --fonte-header-mobile: 0.9rem;
+    --tamanho-icone: 2.2rem;
+    --tamanho-icone-mobile: 1.9rem;
+
+
+    /*FOOTER:*/
+    --cor-footer: #181717;
+    --texto-footer: #b3afaf;
+    --tamanho-icone: 32px;
+    --gap-icone: 20px;
+    --filtro: 1.9;
+
+}
+
+@font-face {
+    font-family: 'GameOfThrones';
+    src: url(../fonts/game_of_thrones.woff) format('woff');
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--preto);
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    line-height: var(--altura-linha);
+}
+
+
+/*COMPUTADOR:=====================================================================================================================================================*/
+/*HEADER > */
+header {
+    position: fixed;
+    inset: 0 auto auto 0;
+    width: 100%;
+    padding: var(--padding-header) calc(var(--padding-header) * 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background: transparent;
+}
+
+.logo img {
+    height: 50px;
+    transition: var(--transicao-padrao);
+}
+
+.navegacao {
+    display: flex;
+    gap: var(--espaço-links-header);
+}
+
+.navegacao a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: var(--fonte-header);
+    transition: color 0.25s, transform 0.25s;
+    font-family: 'GameOfThrones';
+}
+
+.navegacao a:hover {
+    color: grey;
+    transform: scale(1.05);
+}
+
+#botao-do-menu {
+    display: none;
+}
+
+.icone-do-menu {
+    display: none;
+    cursor: pointer;
+    font-size: var(--tamanho-icone);
+    color: var(--cor-texto);
+}
+
+/* MAIN > ===========================================================================================================================================================*/
+main {
+    padding: 80px 0 0 0;
+    background: url('../asset/') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.inicio {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.inicio img {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+}
+
+.texto {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 0px;
+    width: 50%;
+    color: rgb(230, 230, 230);
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 2px 8px rgba(117, 115, 111, 0.8);
+    margin-bottom: 50px;
+}
+
+.texto p {
+    font-size: 1.20rem;
+    line-height: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*SINOPSE:*/
+.container-sinopse {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(124, 122, 120, 0.6);
+    color: #ffffff;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 80px;
+}
+
+.container-sinopse h2 {
+    color: #d1d1d1;
+    text-shadow: 0 2px 8px rgba(221, 214, 202, 0.8);
+    padding-bottom: 8px;
+}
+
+/*CARDS DAS CASAS*/
+.casas h2 {
+    text-align: center;
+    font-family: var(--fonte-GOT);
+}
+
+.house-card:hover h3 {
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-6px) scale(1.05);
+    text-shadow: 0 0 10px rgba(131, 185, 176, 0.795);
+}
+
+h3 {
+    font-family: var(--fonte-GOT);
+}
+
+.house-gallery {
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+}
+
+.house-card {
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.5s, text-shadow 0.5s;
+}
+
+.house-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px rgba(141, 137, 131, 0.6);
+}
+
+.house-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.house-card p {
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .5s;
+}
+
+.house-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*FATOS:*/
+.fatos h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'GameOfThrones';
+}
+
+.fatos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    height: 450px;
+    width: 60%;
+}
+
+figure {
+    position: relative;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+figure:hover {
+    width: 50%
+}
+
+figure:hover img {
+    filter: grayscale(0)
+}
+
+figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: #000a;
+    color: #fff;
+    font-size: 0.7rem;
+    line-height: 1.3;
+    padding: 12px;
+    text-align: left;
+    opacity: 0;
+    transition: 0.4s;
+    max-height: 50%;
+    overflow: auto;
+    backdrop-filter: blur(4px);
+}
+
+figure:hover figcaption {
+    opacity: 1
+}
+
+/* MAPA*/
+#mundo {
+    overflow-x: hidden;
+    margin: 50px;
+}
+
+.mundo h2 {
+    text-align: center;
+    font-family: var(--fonte-GOT);
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*FOOTER > ===============================================================================================================================*/
+footer {
+    background: var(--cor-footer);
+    color: var(--texto-footer);
+    padding: 22px 0;
+    text-align: center;
+    font-family: var(--fonte-principal);
+}
+
+.redes-sociais {
+    list-style: none;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-icone);
+}
+
+.redes-sociais li img {
+    width: var(--tamanho-icone);
+    height: var(--tamanho-icone);
+    transition: filter 0.3s;
+    cursor: pointer;
+}
+
+.redes-sociais li img:hover,
+.redes-sociais li img:focus {
+    filter: brightness(var(--filtro));
+    outline: none;
+}
+
+.GOT {
+    font-family: 'GameOfThrones';
+    text-decoration: none;
+    color: var(--texto-footer);
+    font-size: 12.5px;
+}
+
+footer p {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*RESPONSIVIDADE */
+@media(max-width:1024px) {
+    :root {
+        --fonte-header: var(--fonte-header-tablet);
+    }
+
+    .navegacao {
+        gap: 1.4rem;
+    }
+}
+
+@media(max-width:850px) {
+    .icone-do-menu {
+        display: block;
+    }
+
+    .navegacao {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    header:has(#botao-do-menu:checked) .navegacao {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    header:has(#botao-do-menu:checked) .logo img {
+        opacity: 0;
+    }
+}
+
+@media(max-width:600px) {
+    :root {
+        --fonte-header: var(--fonte-header-mobile);
+        --tamnho-do-icone: var(--tamanho-icone-mobile);
+        --padding-header: 0.8rem;
+    }
+
+    header {
+        padding: var(--padding-header) calc(var(--padding-header)*2);
+    }
+
+    .navegacao {
+        gap: 1rem;
+    }
+}
+@media (max-width: 1000px) {
+    .texto {
+        width: 50%;
+        top: 1%;
+        margin: 3px;
+    }
+
+    .container-sinopse {
+        padding: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .house-card {
+        flex: 1 1 calc(50% - 25px);
+    }
+
+    .container-sinopse {
+        padding: 30px;
+        font-size: 1.1rem;
+        margin: 25px;
+    }
+
+    .texto {
+        width: 90%;
+        left: 15px;
+        top: 1%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .texto {
+        width: 90%;
+        left: 5%;
+        top: 1%;
+        margin: 0;
+    }
+
+    .texto p {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+    }
+
+    .house-card {
+        flex: 1 1 80%;
+        margin: 15px;
+    }
+
+    .container-sinopse {
+        padding: 25px;
+        font-size: 1rem;
+        margin: 19px;
+    }
+
+    .mapa {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .texto {
+        width: 80%;
+        left: 4%;
+        top: 1px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+
+    .container-sinopse {
+        padding: 20px;
+        font-size: 0.95rem;
+        margin: 15px;
+    }
+
+    .mapa-container {
+        margin: 50px;
+        height: 100px;
+        width: 100px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .texto {
+        width: 90%;
+        left: 2.1%;
+        margin: 4px;
+    }
+
+    .texto p {
+        font-size: 12px;
+    }
+
+    .container-sinopse {
+        padding: 15px;
+        font-size: 0.9rem;
+        margin: 10px;
+    }
+}
+
+@media(max-width: 900PX) {
+    .imagens {
+        width: 90%;
+        height: 400px;
+        gap: 6px;
+    }
+
+    figure {
+        width: 20%;
+    }
+
+    figure:hover {
+        width: 50%;
+    }
+}
+
+@MEDIA(max-width: 600px) {
+
+    figure:hover {
+        width: 180%
+    }
+}
+
+@media (max-width: 850px) {
+    .redes-sociais {
+        gap: 18px;
+    }
+
+    .redes-sociais li img {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        padding: 28px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .redes-sociais {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .redes-sociais li img {
+        width: 26px;
+        height: 26px;
+    }
+
+    footer {
+        padding: 25px 10px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
